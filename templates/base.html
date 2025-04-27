@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" >
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'custom', -apple-system, sans-serif;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(-45deg, #6A3F36, #C8A796, #F4F3EE, #F8E4BE, #EEA988);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+    
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .nav {
+          font-family: 'Montserrat', sans-serif;
+      }
+      
+      .nav-link {
+          color: black !important;
+          font-weight: 500;
+          font-size: 1.1rem;
+          transition: all 0.3s ease; 
+      }
+      
+      .nav-link:hover {
+          color:rgb(0, 0, 0) !important;
+          transform: scale(1.05);
+      }
+     
+      .nav-link.active {
+        background-color:#6A3F36 !important;
+      }
+      
+      .header__img {
+        background-color: black !important;
+      }
+
+      @font-face {
+        font-family: 'custom';
+        src: url('/static/fonts/custom.ttf') format('truetype');
+      }
+
+    </style>
+</head>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Simple header</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Our Services</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Café Menu</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Expirience</a></li>
+        <li class="nav-item">
+          <img class="header__img" src="{{ url_for('static', filename='img/6.png') }}" alt="html">
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Contact Us</a></li>
+      </ul>
+    </header>
+</div>
+</html>
