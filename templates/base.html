@@ -14,7 +14,7 @@
             font-family: 'custom', -apple-system, sans-serif;
             margin: 0;
             height: 100vh;
-            background: linear-gradient(-45deg, #6A3F36, #C8A796, #F4F3EE, #F8E4BE, #EEA988);
+            background: linear-gradient(-45deg,rgb(247, 223, 215),rgb(247, 209, 190),rgb(246, 240, 209),rgb(233, 221, 198),rgb(205, 198, 194));
             background-size: 400% 400%;
             animation: gradientBG 10s ease infinite;
         }
@@ -28,6 +28,11 @@
           font-family: 'Montserrat', sans-serif;
       }
       
+      .nav-item {
+        margin-right: 20px;
+        margin-top: 15px;
+      }
+
       .nav-link {
           color: black !important;
           font-weight: 500;
@@ -41,12 +46,46 @@
       }
      
       .nav-link.active {
-        background-color:#6A3F36 !important;
+        background-color:#EEA988 !important;
       }
       
-      .header__img {
-        background-color: black !important;
+      :root {
+        --header-padding: 20px;
       }
+    
+      .logo-container {
+        margin-left: var(--header-padding);
+      }
+    
+      .nav-menu {
+        margin-right: var(--header-padding);
+      }
+
+      .header__img {
+        height: 27px !important;
+        width: 27px !important;
+        margin-right: 11px;
+        top: -10px;
+        margin-top: 1px;
+      }
+
+      .header__logo {
+        height: 50px;
+        width: 150px;
+        margin-left: -300px;
+      }
+
+      main {
+        margin-top: 30px; 
+      }
+    
+      html, body {
+        overflow: hidden; 
+        height: 100%; 
+        margin: 0;
+        padding: 0;
+    }
+
 
       @font-face {
         font-family: 'custom';
@@ -56,10 +95,12 @@
     </style>
 </head>
 <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4">Simple header</span>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
+      <div class="container">
+        <img class="header__logo" src="{{ url_for('static', filename='img/7.png') }}" alt="logo">
+        </div>
       </a>
 
       <ul class="nav nav-pills">
@@ -69,9 +110,23 @@
         <li class="nav-item"><a href="#" class="nav-link">Expirience</a></li>
         <li class="nav-item">
           <img class="header__img" src="{{ url_for('static', filename='img/6.png') }}" alt="html">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Contact Us</a></li>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Contact Us</a></li>
       </ul>
     </header>
 </div>
 </html>
+
+<main>
+  <div class="row">
+    <div class="col-12">
+    </div>
+  </div>
+</main>
+</div>
+
+<footer class="py-3 my-4">
+  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+  </ul>
+  <p class="text-center text-body-secondary">© 2025 Company, Inc</p>
+</footer>
